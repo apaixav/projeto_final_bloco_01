@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComerceGames.Classes;
+using System;
 
 namespace ConsoleApp1
 {
@@ -9,6 +10,9 @@ namespace ConsoleApp1
         {
             int opcao = 0, id, tipo;
 
+            Plataforma j2 = new Plataforma("Super Mário", 6, 145, 0, 8.9, "Nintendo switch");
+
+            j2.Visualizar();
 
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -20,7 +24,7 @@ namespace ConsoleApp1
             Console.WriteLine("                                             ");
             Console.WriteLine("          1- Criar Produto                   ");
             Console.WriteLine("          2- Lista dos Produtos              ");
-            Console.WriteLine("          3- Consultar por Id                ");
+            Console.WriteLine("          3- Consultar por Número            ");
             Console.WriteLine("          4- Atualizar Produto               ");
             Console.WriteLine("          5- Deletar Produto                 ");
             Console.WriteLine("          6- Sair                            ");
