@@ -1,0 +1,15 @@
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\bin\Debug\net7.0\ComerceGames.exe
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\bin\Debug\net7.0\ComerceGames.deps.json
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\bin\Debug\net7.0\ComerceGames.runtimeconfig.json
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\bin\Debug\net7.0\ComerceGames.dll
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\bin\Debug\net7.0\ComerceGames.pdb
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.csproj.AssemblyReference.cache
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.AssemblyInfoInputs.cache
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.AssemblyInfo.cs
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.dll
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\refint\ComerceGames.dll
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.pdb
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ComerceGames.genruntimeconfig.cache
+C:\Users\lucas\OneDrive\Área de Trabalho\Performance\projeto_final_bloco_01\ConsoleApp1\obj\Debug\net7.0\ref\ComerceGames.dll
