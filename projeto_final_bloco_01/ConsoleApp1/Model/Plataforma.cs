@@ -10,8 +10,8 @@ namespace ComerceGames.Classes
     {
 
         string plataforma;
-        public Plataforma(string nome, int genero, decimal preco, int classificacao, double nota, string plataforma)
-            : base(nome, genero, preco, classificacao, nota)
+        public Plataforma(string nome,int id, int genero, decimal preco, int classificacao, decimal nota, string plataforma)
+            : base(nome,id, genero, preco, classificacao, nota)
         {
             this.plataforma = plataforma;
         }

@@ -1,4 +1,5 @@
 ﻿using ComerceGames.Classes;
+using ComerceGames.Controller;
 using System;
 
 namespace ConsoleApp1
@@ -8,11 +9,16 @@ namespace ConsoleApp1
         private static ConsoleKeyInfo consoleKeyInfo;
         static void Main(string[] args)
         {
-            int opcao = 0, id, tipo;
+            int opcao = 0, id, genero, classificacao;
+            string nome, plataforma;
+            decimal preco, nota;
 
-            Plataforma j2 = new Plataforma("Super Mário", 6, 145, 0, 8.9, "Nintendo switch");
+            GamesController jogos = new();
 
-            j2.Visualizar();
+           
+
+            while (true)
+            {
 
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -43,80 +49,156 @@ namespace ConsoleApp1
                 System.Environment.Exit(0);
             }
 
-            switch (opcao)
-            {
-                case 1:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Criar Produto: \n");
-                    Console.ResetColor();
+                switch (opcao)
+                {
+                    case 1:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Criar Produto: \n");
+                        Console.ResetColor();
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    KeyPress();
-                    Console.ResetColor();
-                    break;
+                        Console.WriteLine("Digite o Nome do Jogo:");
+                        nome = Console.ReadLine();
 
-                case 2:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Lista dos Produtos: \n");
-                    Console.ResetColor();
+                        Console.WriteLine("Digite o Genero do Jogo:");
+                        Console.WriteLine("1 -Terror " +
+                            "  /2 - Hack'n slash" +
+                            " /3 - Esportes"+
+                            " /4 - Rpg" +
+                            " /5 - Aventura" +
+                            " /6 - Diversão familiar" +
+                            " /7 - Estratégia" +
+                             " /8 - Outros");
+                        genero = Convert.ToInt32(Console.ReadLine());
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    KeyPress();
-                    Console.ResetColor();
-                    break;
+                        Console.WriteLine("Digite o Preço do Jogo");
+                        preco = Convert.ToDecimal(Console.ReadLine());
 
-                case 3:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Consultar por Id: \n");
-                    Console.ResetColor();
+                        Console.WriteLine("Digite a Classificação do Jogo");
+                        classificacao = Convert.ToInt32(Console.ReadLine());
+                    
+                        Console.WriteLine("Digite a Nota do Jogo");
+                        nota = Convert.ToDecimal(Console.ReadLine());
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    KeyPress();
-                    Console.ResetColor();
-                    break;
+                        Console.WriteLine("Digite a Plataforma do Jogo:");
+                        plataforma = Console.ReadLine();
+                        jogos.CriarProduto(new Plataforma(nome, jogos.GerarId(), genero, preco, classificacao, nota, plataforma));
 
-                case 4:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Atualizar Produto: \n");
-                    Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        KeyPress();
+                        Console.ResetColor();
+                        break;
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    KeyPress();
-                    Console.ResetColor();
-                    break;
+                    case 2:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Lista dos Produtos: \n");
+                        Console.ResetColor();
 
-                case 5:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Deletar Produto: \n");
-                    Console.ResetColor();
+                        jogos.ListarProdutos();
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    KeyPress();
-                    Console.ResetColor();
-                    break;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        KeyPress();
+                        Console.ResetColor();
+                        break;
 
-                default:
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Opção inválida");
-                    Console.ResetColor();
+                    case 3:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Consultar por Id: \n");
+                        Console.ResetColor();
 
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    KeyPress();
-                    Console.ResetColor();
-                    break;
+                        Console.WriteLine("Digite o Id do Produto: ");
+                        id = Convert.ToInt32(Console.ReadLine());
 
-                    static void KeyPress()
-                    {
-                        do
+                        jogos.ConsultarporId(id);
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        KeyPress();
+                        Console.ResetColor();
+                        break;
+
+                    case 4:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Atualizar Produto: \n");
+                        Console.ResetColor();
+
+                        Console.WriteLine("Digite o Id do Produto: ");
+                        id = Convert.ToInt32(Console.ReadLine());
+
+                        var jogo = jogos.BuscarNaCollection(id);
+
+                        if (jogo is not null)
                         {
+                            Console.WriteLine("Digite o Nome do Jogo:");
+                            nome = Console.ReadLine();
 
-                            Console.WriteLine("Pressione enter para continuar!");
-                            consoleKeyInfo = Console.ReadKey();
-                        } while (consoleKeyInfo.Key != ConsoleKey.Enter);
+                            Console.WriteLine("Digite o Genero do Jogo:");
+                            Console.WriteLine("Digite o Genero do Jogo:");
+                            Console.WriteLine("1 -Terror " +
+                                "  /2 - Hack'n slash" +
+                                " /3 - Esportes" +
+                                " /4 - Rpg" +
+                                " /5 - Aventura" +
+                                " /6 - Diversão familiar" +
+                                " /7 - Estratégia" +
+                                 " /8 - Outros");
+                            genero = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Digite o Preço do Jogo");
+                            preco = Convert.ToDecimal(Console.ReadLine());
+
+                            Console.WriteLine("Digite a Classificação do Jogo");
+                            classificacao = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Digite a Nota do Jogo");
+                            nota = Convert.ToDecimal(Console.ReadLine());
+
+                            Console.WriteLine("Digite a Plataforma do Jogo:");
+                            plataforma = Console.ReadLine();
+                            jogos.AtualizarProduto(new Plataforma(nome, id, genero, preco, classificacao, nota, plataforma));
+                        }
 
 
-                    }
-            
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        KeyPress();
+                        Console.ResetColor();
+                        break;
+
+                    case 5:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Deletar Produto: \n");
+                        Console.ResetColor();
+
+                        Console.WriteLine("Digite o id do produto: ");
+                        id = Convert.ToInt32(Console.ReadLine());
+
+                        jogos.DeletarProduto(id);
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        KeyPress();
+                        Console.ResetColor();
+                        break;
+
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Opção inválida");
+                        Console.ResetColor();
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        KeyPress();
+                        Console.ResetColor();
+                        break;
+
+                        static void KeyPress()
+                        {
+                            do
+                            {
+                                Console.WriteLine("Pressione enter para continuar!");
+                                consoleKeyInfo = Console.ReadKey();
+                            } while (consoleKeyInfo.Key != ConsoleKey.Enter);
+
+
+                        }
+                }
                 
             }
 
@@ -124,4 +206,5 @@ namespace ConsoleApp1
 
         }
     }
+  
 }

@@ -11,13 +11,15 @@ namespace ComerceGames.Classes
     {
         private string nome;
         private int genero;
+        private int id;
         private decimal preco;
         private int classificacao;
-        private double nota;
+        private decimal nota;
 
-        public Jogo(string nome, int genero, decimal preco, int classificacao, double nota)
+        public Jogo(string nome,int id, int genero, decimal preco, int classificacao, decimal nota)
         {
             this.nome = nome;
+            this.id = id;
             this.genero = genero;
             this.preco = preco;
             this.classificacao = classificacao;
@@ -32,6 +34,15 @@ namespace ComerceGames.Classes
         {
             this.nome = nome;
         }
+        public int GetId()
+        {
+            return id;
+        }
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
         public decimal GetPreço()
         {
             return preco;
@@ -50,15 +61,14 @@ namespace ComerceGames.Classes
         public void SetClassificação(int classificacao)
         {
             this.classificacao = classificacao;
-            if (classificacao == 0)
-                Console.WriteLine("Livre");
+           
         }        
-            public double GetNota()
+            public decimal GetNota()
         {
             return nota;
         }
 
-        public void SetOlho(double nota)
+        public void SetNota(decimal nota)
         {
             this.nota = nota;
         }
@@ -110,9 +120,17 @@ namespace ComerceGames.Classes
             Console.WriteLine("Dados do Jogo");
             Console.WriteLine("*******************************");
             Console.WriteLine($"Nome do Jogo:{this.nome} ");
+            Console.WriteLine($"Nuúmero de identificação:{this.id} ");
             Console.WriteLine($"Genero do Jogo: {genero} ");
             Console.WriteLine($"Preço do Jogo: " + (this.preco).ToString(format: "C"));
-            Console.WriteLine($"Classificação do Jogo:" + this.classificacao);
+            if(classificacao == 0)
+            {
+                Console.WriteLine($"Classificação do Jogo:" + "Livre");
+            }
+            else
+            {
+                Console.WriteLine($"Classificação do Jogo:" + this.classificacao);
+            }
             Console.WriteLine($"Nota do Jogo: {this.nota}" + "/10");
 
         }

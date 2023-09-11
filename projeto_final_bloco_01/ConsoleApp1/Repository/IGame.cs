@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComerceGames.Model.Repository
+namespace ComerceGames.Repository
 {
-    internal interface IGame
+    public interface IGame
     {
 
         public void CriarProduto(Jogo jogo);
         public void ListarProdutos();
-        public void ConsultarporNota(int nota);
+        public void ConsultarporId (int id);
         public void AtualizarProduto(Jogo jogo);
         public void DeletarProduto(int nota);
 
